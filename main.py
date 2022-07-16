@@ -1,9 +1,11 @@
 # Importando bibliotecas
 import pygame
-
-from screen import * 
 from pygame.locals import *
 from sys import exit
+
+# Importando componentes do Jogo
+from Components.screen import * 
+
 
 pygame.init()
 
