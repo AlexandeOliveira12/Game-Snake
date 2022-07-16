@@ -1,20 +1,18 @@
 # Importando bibliotecas
-from turtle import width
 import pygame
+
+from screen import * 
 from pygame.locals import *
 from sys import exit
 
 pygame.init()
 
 # Criando altura e largura
-height = 640
-width = 480
-
 screen = pygame.display.set_mode((height, width))
 print('A tela foi aberta')
 
 #Mudando o nome da janela
-pygame.display.set_caption('Tela do jogo')
+pygame.display.set_caption(Name)
 
 #Criando loop
 while True:
