@@ -1,13 +1,13 @@
 # Importando bibliotecas
-from email import message_from_binary_file
+#from email import message_from_binary_file
 import pygame
 from pygame.locals import *
 from sys import exit
 from random import randint
 
 # Importando componentes do Jogo
-from Components.screen import *
-from Components.collision_parameters import *
+from Components.Screen import *
+from Components.CollisionParameters import *
 
 pygame.init()
 

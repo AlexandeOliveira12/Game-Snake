@@ -1,7 +1,14 @@
-Criando jogo Snake com python usando a biblioteca
-<br>
-•Pygame (para baixa-la escreva no terminal: pip install pygame)
-<br>
-•Utilizando POO para melhor organização e boas práticas 
+# Criando jogo Snake com Python 
 
-Obs: Projeto em Desenvolvimento
+## Bibliotecas usadas:
+
+•Pygame
+
+````
+pip install pygame
+````
+# Security policy
+
+## How to report a vulnerability
+
+Caso encontre alguma vulnerabilidade, me avise abrindo um chat aqui no repositório, o jogo está em desenvolvimento, vulnerabilidades serão comuns, ESTA É APENAS UMA VERSÃO DE TESTE
