@@ -1,5 +1,4 @@
 # Importando bibliotecas
-#from email import message_from_binary_file
 import pygame
 from pygame.locals import *
 from sys import exit
@@ -11,31 +10,39 @@ from Components.CollisionParameters import *
 
 pygame.init()
 
-# Criando altura e largura
+# Importando Musicas
+# Musica de fundo
+background_noise = pygame.mixer.music.load('./Sounds/CatSound.mp3')
+pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0.1)
+
+# Musica de Colisão
+noise_collision = pygame.mixer.Sound('./Sounds/SoundCoin.wav')
+
+# Altura e largura
 screen = pygame.display.set_mode((height, width))
 print('A tela foi aberta')
 
-# Mudando o nome da janela
+# Nome da janela
 pygame.display.set_caption(Name)
 
 # Controlar o FPS
 watch = pygame.time.Clock()
 
-# Colocando o objeto no meio da tela
-x = width/2
-y = height/2
+# Centralizando objeto
+x_snake = int(width/2)
+y_snake = int(height/2)
 
-# Definindo Tipo do texto
+# Tipo do texto
 font = pygame.font.SysFont('arial', 40, True, True)
-pontos = 0
-
+    
 # Loop
 while True:
     
-    # Taxa de quadros por segundo (FPS)
-    watch.tick(130)
+    # Taxa de quadros por segundos
+    watch.tick(120)
     
-    # Apagar a trajetoria do retangulo
+    # Apagar a trajetoria
     screen.fill((0,0,0))
     
     # Texto na tela
@@ -49,32 +56,30 @@ while True:
             exit()
    
    
-    # Pressionando Teclas para se movimentar             
-    if pygame.key.get_pressed()[K_a]:
-        x = x - 4
-    if pygame.key.get_pressed()[K_d]:
-        x = x + 4
-    if pygame.key.get_pressed()[K_w]:
-        y = y - 4
-    if pygame.key.get_pressed()[K_s]:
-        y = y + 4                       
+        # Pressionando Teclas para se movimentar             
+        if pygame.key.get_pressed()[K_a]:
+            x_snake = x_snake - 15
+        if pygame.key.get_pressed()[K_d]:
+            x_snake = x_snake + 15
+        if pygame.key.get_pressed()[K_w]:
+            y_snake = y_snake - 15
+        if pygame.key.get_pressed()[K_s]:
+            y_snake = y_snake + 15
     
-    #Retangulo Vermelho
-    ret_vermelho = pygame.draw.rect(screen, (255,0,0), (x,y,40,50))
+    # Snake
+    snake = pygame.draw.rect(screen, (0,255,0), (x_snake,y_snake,40,50))
     
-    # Retangulo Azul
-    ret_azul = pygame.draw.rect(screen,(0,0,255), (x_azul,y_azul,40,50))
+    # Apple
+    apple = pygame.draw.rect(screen,(255,0,0), (x_apple,y_apple,40,50))
     
-    #Colisão entre os retangulos
-    if ret_vermelho.colliderect(ret_azul):
-        x_azul = randint(40, 600)
-        y_azul = randint(50, 430)
-        pontos = pontos + 1
+    # Colisão
+    if snake.colliderect(apple):
+         x_apple = randint(40, 600)
+         y_apple = randint(50, 430)
+         pontos = pontos + 1
+         noise_collision.play()
         
-        
-    screen.blit(text, (430,50))
+    screen.blit(text, (410,10))
     
-    # Deixando a tela do jogo em loop
+    # Tela em loop
     pygame.display.update()  
-                  
-            
