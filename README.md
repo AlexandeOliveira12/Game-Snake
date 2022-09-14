@@ -1,4 +1,4 @@
-# Criando jogo simples snake com Python 
+# Criando jogo snake com Python 
 
 ## Bibliotecas usadas:
 
@@ -21,7 +21,7 @@ git clone https://github.com/AlexandeOliveira12/Game-Snake.git
 Caso encontre alguma vulnerabilidade, me avise abrindo um chat aqui no repositório, o jogo está em desenvolvimento, vulnerabilidades serão comuns, ESTA É APENAS UMA VERSÃO DE TESTE
 
 
-# Creating simple snake game with Python
+# Creating snake game with Python
 
 ## Libraries used:
 
