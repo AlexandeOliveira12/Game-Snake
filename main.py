@@ -5,19 +5,19 @@ from sys import exit
 from random import randint
 
 # Importando componentes do Jogo
-from Components.Screen import *
+from Components.screen import *
 from Components.CollisionParameters import *
 
 pygame.init()
 
 # Importando Musicas
 # Musica de fundo
-background_noise = pygame.mixer.music.load('./Sounds/CatSound.mp3')
+background_noise = pygame.mixer.music.load('Sounds/CatSound.mp3')
 pygame.mixer.music.play(-1)
 pygame.mixer.music.set_volume(0.1)
 
 # Musica de Colisão
-noise_collision = pygame.mixer.Sound('./Sounds/SoundCoin.wav')
+noise_collision = pygame.mixer.Sound('Sounds/SoundCoin.wav')
 
 # Altura e largura
 screen = pygame.display.set_mode((height, width))
